@@ -1,6 +1,6 @@
 pragma solidity ^0.5.1;
 
-contract SteamGame {
+contract BasicStorage {
     uint appid;
     string name;
 
