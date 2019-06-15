@@ -17,7 +17,6 @@ contract Steamchain {
     struct Game {
         uint id;
         string appID;
-        string name;
         string username;
         address userAddress;
         // User user;
@@ -35,7 +34,6 @@ contract Steamchain {
 
     function addGame(
         string memory _appID,
-        string memory _name,
         string memory _username,
         address _userAddress
     )
@@ -44,7 +42,7 @@ contract Steamchain {
     {
         incrementCount();
         // _userAddress = msg.sender; // TODO how to do multisignature for this, with other user?
-        Game memory game = Game(gameCount, _appID, _name, _username, _userAddress);
+        Game memory game = Game(gameCount, _appID, _username, _userAddress);
         games[gameCount] = game;
         gamesByAppID[_appID] = game;
         gamesByUsername[_username] = game;
